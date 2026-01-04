@@ -116,5 +116,5 @@ Santa Claus, also known as Saint Nicholas, Kris Kringle, or simply "Santa", is a
 
 <div align="center">
   <p>🎄 Made with ❤️ at the North Pole 🎅</p>
-  <p>© {new Date().getFullYear()} Santa's Workshop. All rights reserved.</p>
+  <p>© 2026 Santa's Workshop. All rights reserved.</p>
 </div>
