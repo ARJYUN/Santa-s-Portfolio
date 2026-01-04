@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 72% 51%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 142 76% 36%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 45 93% 47%;
+    --accent-foreground: 0 0% 5%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 0 72% 51%;
+
+    --radius: 0.75rem;
+
+    /* Christmas specific tokens */
+    --christmas-red: 0 72% 51%;
+    --christmas-red-glow: 0 100% 60%;
+    --christmas-gold: 45 93% 47%;
+    --christmas-gold-light: 45 100% 70%;
+    --christmas-green: 142 76% 36%;
+    --christmas-green-light: 142 69% 58%;
+    --christmas-snow: 0 0% 100%;
+    --christmas-night: 220 40% 8%;
+    
+    /* Gradients */
+    --gradient-christmas: linear-gradient(135deg, hsl(var(--christmas-red)) 0%, hsl(var(--christmas-gold)) 100%);
+    --gradient-night: linear-gradient(180deg, hsl(220 40% 4%) 0%, hsl(220 50% 12%) 50%, hsl(var(--christmas-red) / 0.2) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(var(--christmas-gold)) 0%, hsl(var(--christmas-gold-light)) 100%);
+    --gradient-candy: repeating-linear-gradient(45deg, hsl(var(--christmas-red)) 0px, hsl(var(--christmas-red)) 10px, hsl(var(--christmas-snow)) 10px, hsl(var(--christmas-snow)) 20px);
+    
+    /* Shadows */
+    --shadow-glow-red: 0 0 30px hsl(var(--christmas-red) / 0.5), 0 0 60px hsl(var(--christmas-red) / 0.3);
+    --shadow-glow-gold: 0 0 20px hsl(var(--christmas-gold) / 0.6), 0 0 40px hsl(var(--christmas-gold) / 0.3);
+    --shadow-glow-green: 0 0 20px hsl(var(--christmas-green) / 0.5);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 72% 51%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 142 76% 36%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 45 93% 47%;
+    --accent-foreground: 0 0% 5%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 0 72% 51%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+    background: var(--gradient-night);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .text-gradient-christmas {
+    background: var(--gradient-christmas);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-red {
+    box-shadow: var(--shadow-glow-red);
+  }
+
+  .glow-gold {
+    box-shadow: var(--shadow-glow-gold);
+  }
+
+  .glow-green {
+    box-shadow: var(--shadow-glow-green);
+  }
+
+  .text-glow-red {
+    text-shadow: 0 0 20px hsl(var(--christmas-red) / 0.8), 0 0 40px hsl(var(--christmas-red) / 0.4);
+  }
+
+  .text-glow-gold {
+    text-shadow: 0 0 20px hsl(var(--christmas-gold) / 0.8), 0 0 40px hsl(var(--christmas-gold) / 0.4);
+  }
+
+  .candy-stripe {
+    background: var(--gradient-candy);
+  }
+
+  .glass-card {
+    background: hsl(var(--card) / 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  .ornament {
+    @apply rounded-full;
+    background: radial-gradient(circle at 30% 30%, hsl(var(--christmas-red-glow)), hsl(var(--christmas-red)));
+  }
+
+  .ornament-gold {
+    background: radial-gradient(circle at 30% 30%, hsl(var(--christmas-gold-light)), hsl(var(--christmas-gold)));
+  }
+
+  .ornament-green {
+    background: radial-gradient(circle at 30% 30%, hsl(var(--christmas-green-light)), hsl(var(--christmas-green)));
+  }
+}
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+}
