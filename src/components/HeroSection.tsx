@@ -31,23 +31,6 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
       </motion.div>
 
-      {/* Floating ornaments */}
-      <motion.div
-        animate={{ y: [0, -15, 0] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-20 left-20 w-8 h-8 ornament glow-red opacity-60 hidden lg:block"
-      />
-      <motion.div
-        animate={{ y: [0, -20, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute top-40 right-32 w-6 h-6 ornament-gold glow-gold opacity-70 hidden lg:block"
-      />
-      <motion.div
-        animate={{ y: [0, -12, 0] }}
-        transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-        className="absolute bottom-40 left-32 w-10 h-10 ornament-green glow-green opacity-50 hidden lg:block"
-      />
-
       {/* Content */}
       <div className="relative z-20 container mx-auto px-6 text-center">
         <motion.div
