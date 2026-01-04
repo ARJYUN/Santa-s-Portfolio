@@ -46,7 +46,7 @@ const TimelineSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="journey" className="py-24 relative overflow-hidden">
+    <section id="journey" className="pt-24 pb-16 relative overflow-hidden">
       {/* Sleigh animation */}
       <motion.div
         animate={{ x: ["-100%", "200%"] }}
@@ -85,7 +85,7 @@ const TimelineSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.15 }}
-              className={`relative flex items-center mb-12 ${
+              className={`relative flex items-center ${index === timeline.length - 1 ? 'mb-0' : 'mb-12'} ${
                 index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
               }`}
             >
