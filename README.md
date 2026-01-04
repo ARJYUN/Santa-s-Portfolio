@@ -55,7 +55,7 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:[port no.] to view it in your browser.
+Open http://localhost:port to view it in your browser.
 
 ## 🏗️ Building for Production
 
